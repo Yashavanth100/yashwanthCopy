@@ -1,360 +1,581 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>A Surprise from Yash 🙈</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Custom Heart Cursor */ 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(-45deg, #ff1b4e, #ff5e82, #ff9eb5, #ffd6e7, #d9004c);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ff0055"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+<title>A Thousand Kisses for Shilpa ❤️</title>
 
-        /* Welcome Screen Overlay */
-        #welcome-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(15px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 1s ease, visibility 1s;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .open-btn {
-            background: transparent;
-            border: 2px solid #ff4d6d;
-            color: #ff4d6d;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            padding: 15px 40px;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 30px;
-            box-shadow: 0 0 20px rgba(255, 77, 109, 0.4);
-            transition: all 0.3s ease;
-            animation: pulseBtn 2s infinite;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        .open-btn:hover {
-            background: #ff4d6d;
-            color: white;
-            box-shadow: 0 0 40px rgba(255, 77, 109, 0.8);
-            transform: scale(1.05);
-        }
+:root {
+    --pink: #ff4d79;
+    --light-pink: #ffb6c9;
+    --deep-pink: #d9004c;
+}
 
-        @keyframes pulseBtn {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        -45deg,
+        #ff174f,
+        #ff5e91,
+        #ffb6c9,
+        #ffd9e7,
+        #d9004c
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    scroll-behavior: smooth;
+}
 
-        #main-content {
-            display: none; /* Hidden until clicked */
-            opacity: 0;
-            transition: opacity 2s ease-in;
-        }
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        h1 {
-            margin-top: 50px;
-            font-size: 3.8rem;
-            font-family: 'Dancing Script', cursive;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px #ff0055;
-            animation: heartbeat 1.5s infinite;
-            padding: 0 15px;
-        }
+/* Welcome screen */
 
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            15% { transform: scale(1.1); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.15); }
-            60% { transform: scale(1); }
-        }
+#welcome-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(35, 0, 20, 0.91);
+    backdrop-filter: blur(16px);
+    transition: opacity 1s ease, visibility 1s ease;
+}
 
-        /* Enhanced Glass Box */
-        .glass-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 25px;
-            padding: 50px 30px;
-            margin: 30px auto;
-            max-width: 650px;
-            box-shadow: 0 15px 35px rgba(255, 0, 85, 0.2), inset 0 0 20px rgba(255,255,255,0.1);
-            width: 85%;
-            transform: translateY(20px);
-            animation: floatBox 6s ease-in-out infinite;
-        }
+.welcome-title {
+    max-width: 750px;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.3rem, 7vw, 3.5rem);
+    line-height: 1.5;
+    text-shadow: 0 0 25px #ff8fab, 0 0 50px #ff4d79;
+    animation: softGlow 3s infinite alternate;
+}
 
-        @keyframes floatBox {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+.welcome-subtitle {
+    max-width: 450px;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #ffe2ec;
+}
 
-        #msg {
-            font-size: 1.3rem;
-            line-height: 2.2;
-            font-weight: 300;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
+.open-btn {
+    margin-top: 25px;
+    padding: 15px 30px;
+    border: 2px solid #ff7da1;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    font: 500 1rem 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 0 25px #ff4d7960;
+    animation: pulseBtn 2s infinite;
+    transition: 0.3s ease;
+}
 
-        .kiss-row {
-            font-size: 2.2rem;
-            line-height: 1.6;
-            word-break: break-all;
-            padding: 10px 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1.2s forwards;
-            letter-spacing: 5px;
-        }
+.open-btn:hover {
+    background: var(--pink);
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #ff4d79;
+}
 
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
+@keyframes pulseBtn {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
 
-        /* Floating background hearts */
-        .heart {
-            position: fixed;
-            font-size: 1.5rem;
-            bottom: -50px;
-            pointer-events: none;
-            z-index: 10;
-            animation: floatUp 7s ease-in infinite;
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
-        }
+@keyframes softGlow {
+    from { text-shadow: 0 0 15px #ff8fab; }
+    to { text-shadow: 0 0 35px #ff4d79, 0 0 60px #ffb6c9; }
+}
 
-        @keyframes floatUp {
-            0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
-            100% { transform: translateY(-110vh) rotate(360deg) scale(1.8); opacity: 0; }
-        }
+/* Main content */
 
-        /* Click Burst Hearts */
-        .click-burst {
-            position: fixed;
-            font-size: 1.5rem;
-            pointer-events: none;
-            z-index: 9999;
-            animation: burst 0.8s ease-out forwards;
-        }
+#main-content {
+    display: none;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+    padding-top: 1px;
+    transition: opacity 2s ease;
+}
 
-        @keyframes burst {
-            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
-            100% { transform: translate(-50%, -100%) scale(2); opacity: 0; }
-        }
+h1 {
+    margin: 45px 10px 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.7rem, 9vw, 4.5rem);
+    text-shadow: 0 0 20px white, 0 0 40px #ff0055;
+    animation: heartbeat 2s infinite;
+}
 
-        /* Twinkling Stars Background */
-        .star {
-            position: fixed;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            animation: twinkle 3s infinite alternate;
-        }
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.05); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.07); }
+    60% { transform: scale(1); }
+}
 
-        @keyframes twinkle {
-            0% { opacity: 0.2; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 10px #fff; }
-        }
+/* Glass letter */
 
-        footer {
-            padding: 60px 20px;
-            font-size: 2.5rem;
-            font-family: 'Dancing Script', cursive;
-            text-shadow: 0 0 20px rgba(255,255,255,0.9);
-        }
+.glass-box {
+    width: calc(100% - 32px);
+    max-width: 680px;
+    margin: 30px auto;
+    padding: 35px 24px;
+    border-radius: 26px;
+    border: 1px solid rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        0 0 25px rgba(255,105,145,0.35),
+        0 0 60px rgba(255,255,255,0.15),
+        inset 0 0 25px rgba(255,255,255,0.12);
+    animation: floatBox 6s ease-in-out infinite;
+}
 
-        .scroll-indicator {
-            margin-top: 30px;
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            animation: bounce 2s infinite;
-        }
+@keyframes floatBox {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-7px); }
-        }
-    </style>
+#msg {
+    font-size: clamp(1rem, 3.8vw, 1.2rem);
+    font-weight: 300;
+    line-height: 2;
+    overflow-wrap: anywhere;
+    text-shadow: 0 0 12px rgba(255,255,255,0.25);
+}
+
+.scroll-indicator {
+    margin: 35px 12px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Kiss rows */
+
+.kiss-row {
+    padding: 10px 12px;
+    font-size: clamp(1.35rem, 5vw, 2.2rem);
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.25));
+    animation: fadeUp 1.2s both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatUp linear forwards;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* Click heart burst */
+
+.click-burst {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    font-size: 1.6rem;
+    animation: burst 0.9s ease-out forwards;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -100px) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Twinkling stars */
+
+.star {
+    position: fixed;
+    z-index: 0;
+    border-radius: 50%;
+    background: white;
+    pointer-events: none;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+        box-shadow: 0 0 10px white;
+    }
+}
+
+/* Footer */
+
+footer {
+    padding: 45px 15px 60px;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    line-height: 1.7;
+    text-shadow: 0 0 20px white;
+}
+
+footer span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Background Music -->
-    <audio id="bg-music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/02/10/audio_51a31d9c57.mp3?filename=romantic-piano-101140.mp3" type="audio/mpeg">
-    </audio>
+<!-- Romantic piano music -->
+<audio id="bg-music" loop preload="none">
+    <source
+        src="https://cdn.pixabay.com/download/audio/2022/02/10/audio_51a31d9c57.mp3?filename=romantic-piano-101140.mp3"
+        type="audio/mpeg">
+</audio>
 
-    <!-- Welcome Screen to trigger music and excitement -->
-    <div id="welcome-screen">
-        <h1 style="font-size: 2.3rem; margin-top: 0; font-family: 'Poppins', sans-serif; animation: none; text-shadow: none; line-height: 1.5; padding: 0 20px;">
-            Madam, I am enjoying your love ❤️<br>Are you ready for my unlimited kisses? 😘
-        </h1>
-        <button class="open-btn" onclick="startExperience()">Open My Heart 💌</button>
+<!-- Welcome screen -->
+<div id="welcome-screen">
+
+    <h1 class="welcome-title">
+        My Beautiful Shilpa 🥹💕
+        <br>
+        A Thousand Kisses
+        <br>
+        Just for You 💋❤️
+    </h1>
+
+    <p class="welcome-subtitle">
+        A little romance, a little mischief,
+        and a whole lot of sweetness. 🫂✨
+        <br>
+        Your surprise is waiting, beautiful. 🌹
+    </p>
+
+    <button class="open-btn" onclick="startExperience()">
+        Open My Heart, Shilpa 💌
+    </button>
+
+</div>
+
+<!-- Main surprise -->
+<main id="main-content">
+
+    <h1>🌹 Shilpa &amp; Yash 🌹</h1>
+
+    <div class="glass-box">
+        <div id="msg"></div>
     </div>
 
-    <!-- Main Letter Content -->
-    <div id="main-content">
-        <h1>✨ Anu & Yash ✨</h1>
-
-        <div class="glass-box">
-            <div id="msg"></div>
-        </div>
-
-        <div class="scroll-indicator">
-            Scroll down for infinite kisses... 👇
-        </div>
-
-        <div id="kisses-container"></div>
-
-        <footer>
-            Forever Yours, ❤️<br>
-            Your Yash 🫂
-        </footer>
+    <div class="scroll-indicator">
+        Every little heart carries a wish for you... 💕👇
     </div>
 
-    <script>
-        const rawText = `My Dearest ANU ❤️,\n\nEvery scroll on this page is another kiss from me. 💋\n\nNo matter how many kisses appear here...\nThey will never be enough to tell you how much I love you.\n\nYou are my smile.\nMy peace.\nMy happiness.\nMy forever.\n\nI Love You Infinite Times.\n\n❤️ Your Yash ❤️`;
-        const msgElement = document.getElementById("msg");
-        let i = 0;
-        let isTypingStarted = false;
+    <div id="kisses-container"></div>
 
-        // Start Experience Function
-        function startExperience() {
-            // Hide welcome screen
-            const welcome = document.getElementById("welcome-screen");
-            welcome.style.opacity = '0';
-            setTimeout(() => { welcome.style.display = 'none'; }, 1000);
+    <footer>
+        A Thousand Kisses for You 💋
+        <br>
+        <span>One beautiful smile at a time 🥰</span>
+        <br>
+        With warmth, Yash ❤️🫂
+    </footer>
 
-            // Show main content
-            const mainContent = document.getElementById("main-content");
-            mainContent.style.display = 'block';
-            setTimeout(() => { mainContent.style.opacity = '1'; }, 100);
+</main>
 
-            // Play music
-            const music = document.getElementById("bg-music");
-            music.volume = 0.5; // Soft volume
-            music.play().catch(e => console.log("Audio play prevented by browser:", e));
+<script>
+const rawText = `My Beautiful Shilpa ❤️🥹,
 
-            // Start typing effect
-            if(!isTypingStarted) {
-                setTimeout(typeWriter, 1500);
-                isTypingStarted = true;
-            }
+If I could send you one thing through this screen,
+it would be a warm hug that lasts a little longer,
+a gentle kiss on your forehead,
+and a smile that stays with you all day. 🫂💋
+
+You asked for unlimited kisses, Madam...
+So how could I possibly say no? 🙈💕
+
+Here comes your first kiss...
+💋
+
+Then another...
+💋
+
+And one more, just because you deserve it. 😘❤️
+
+Imagine a sky filled with tiny stars,
+each one carrying a little reminder
+that someone is wishing you happiness tonight. ✨🌙
+
+If I could be beside you right now,
+I'd hold your hand gently,
+look into your eyes,
+and tell you how beautiful your smile is. 🥹💗
+
+No grand promises.
+No perfect words.
+Just genuine affection,
+little moments of laughter,
+comfortable silence,
+and a thousand reasons to smile together. 🫶
+
+And whenever you feel tired,
+I hope you remember to be gentle with yourself.
+You deserve kindness, warmth,
+and all the beautiful little things life can offer. 🌸❤️
+
+Now, Madam Shilpa...
+Your unlimited-kiss subscription is officially activated! 😂💋
+
+Your special package includes:
+💕 Unlimited virtual kisses
+🫂 Endless warm hugs
+😘 Forehead kisses on request
+❤️ Extra affection whenever you need a smile
+🙈 Occasional flirting from Yash
+
+Subscription fee?
+One beautiful smile...
+and absolutely no pressure to pay. 🥰💖
+
+Scroll slowly, beautiful.
+Every little heart carries a wish for your happiness. 💞
+
+Sending you a sky full of kisses,
+a heart full of warmth,
+and the sweetest hug through this screen. 💋🫂
+
+Keep smiling, Shilpa.
+May life always give you reasons to shine. ✨
+
+With warmth and affection,
+Yash ❤️🌹`;
+
+const msgElement = document.getElementById("msg");
+const kissesContainer = document.getElementById("kisses-container");
+
+let charIndex = 0;
+let experienceStarted = false;
+let kissCount = 0;
+let lastScrollTime = 0;
+
+function startExperience() {
+    if (experienceStarted) return;
+    experienceStarted = true;
+
+    const welcome = document.getElementById("welcome-screen");
+    const main = document.getElementById("main-content");
+    const music = document.getElementById("bg-music");
+
+    welcome.style.opacity = "0";
+    welcome.style.visibility = "hidden";
+
+    main.style.display = "block";
+
+    requestAnimationFrame(() => {
+        main.style.opacity = "1";
+    });
+
+    music.volume = 0.35;
+    music.play().catch(() => {
+        // The browser may block music or the connection may be unavailable.
+    });
+
+    setTimeout(typeWriter, 700);
+
+    for (let i = 0; i < 4; i++) {
+        addKissRow();
+    }
+}
+
+// Romantic typing effect
+function typeWriter() {
+    if (charIndex >= rawText.length) return;
+
+    const char = rawText.charAt(charIndex);
+
+    if (char === "\n") {
+        msgElement.appendChild(document.createElement("br"));
+    } else {
+        msgElement.appendChild(document.createTextNode(char));
+    }
+
+    charIndex++;
+
+    const speed = Math.random() * 25 + 25;
+    setTimeout(typeWriter, speed);
+}
+
+// Add kiss emoji rows
+function addKissRow() {
+    // Keep the page responsive after many scrolls.
+    if (kissCount >= 100) {
+        if (kissesContainer.firstElementChild) {
+            kissesContainer.firstElementChild.remove();
+            kissCount--;
         }
+    }
 
-        // Typing Effect
-        function typeWriter() {
-            if (i < rawText.length) {
-                let char = rawText.charAt(i);
-                if (char === '\n') {
-                    msgElement.innerHTML += '<br>';
-                } else {
-                    msgElement.innerHTML += char;
-                }
-                i++;
-                let typingSpeed = Math.random() * 40 + 40; 
-                setTimeout(typeWriter, typingSpeed);
-            }
-        }
+    const row = document.createElement("div");
+    row.className = "kiss-row";
 
-        // Infinite Kisses
-        const kissesContainer = document.getElementById("kisses-container");
-        function addKissRow() {
-            let p = document.createElement("div");
-            p.className = "kiss-row";
-            const emojis = ["💋", "💋", "💋", "😘", "💕", "❤️", "💞"];
-            let rowContent = "";
-            for(let j=0; j<35; j++) {
-                rowContent += emojis[Math.floor(Math.random() * emojis.length)];
-            }
-            p.innerHTML = rowContent;
-            kissesContainer.appendChild(p);
-        }
+    const emojis = ["💋", "😘", "💕", "❤️", "💞", "🌹", "✨"];
+    const fragment = document.createDocumentFragment();
 
-        // Pre-load a few kisses
-        for(let k = 0; k < 5; k++) {
-            setTimeout(addKissRow, k * 300);
-        }
+    for (let j = 0; j < 18; j++) {
+        fragment.appendChild(
+            document.createTextNode(
+                emojis[Math.floor(Math.random() * emojis.length)] + " "
+            )
+        );
+    }
 
-        // Infinite scroll logic
-        window.addEventListener('scroll', () => {
-            if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
-                addKissRow();
-            }
-        });
+    row.appendChild(fragment);
+    kissesContainer.appendChild(row);
+    kissCount++;
+}
 
-        // Floating Hearts
-        function createHeart() {
-            let h = document.createElement("div");
-            h.className = "heart";
-            const heartEmojis = ["❤️", "💖", "✨", "💕", "🌸", "🦋"];
-            h.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-            h.style.left = Math.random() * 100 + "vw";
-            h.style.animationDuration = (5 + Math.random() * 5) + "s";
-            h.style.fontSize = (1 + Math.random() * 2) + "rem";
-            document.body.appendChild(h);
-            setTimeout(() => h.remove(), 9000);
-        }
-        setInterval(createHeart, 350);
+// Add more kisses near the bottom of the page
+window.addEventListener("scroll", () => {
+    if (!experienceStarted) return;
 
-        // Interactive Click Burst Hearts
-        document.addEventListener('click', (e) => {
-            // Don't burst on the welcome button to keep it clean
-            if(e.target.className === 'open-btn') return;
+    const now = Date.now();
+    if (now - lastScrollTime < 300) return;
 
-            let burst = document.createElement("div");
-            burst.className = "click-burst";
-            burst.innerHTML = "💖";
-            burst.style.left = e.clientX + "px";
-            burst.style.top = e.clientY + "px";
-            document.body.appendChild(burst);
-            
-            setTimeout(() => burst.remove(), 800);
-        });
+    if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 450
+    ) {
+        lastScrollTime = now;
+        addKissRow();
+    }
+});
 
-        // Generate Twinkling Stars Background
-        function createStars() {
-            for(let s = 0; s < 50; s++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.width = Math.random() * 3 + "px";
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.animationDelay = Math.random() * 3 + "s";
-                document.body.appendChild(star);
-            } 
-        }
-        createStars();
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
 
-    </script>
+    const emojis = ["❤️", "💖", "✨", "💕", "🌸", "🦋", "💗"];
+    heart.textContent =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+    heart.style.fontSize = (1 + Math.random() * 1.5) + "rem";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9500);
+}
+
+setInterval(createHeart, 650);
+
+// Twinkling stars
+function createStars() {
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < 40; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+
+        const size = Math.random() * 3 + 1;
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.animationDelay = Math.random() * 3 + "s";
+
+        fragment.appendChild(star);
+    }
+
+    document.body.appendChild(fragment);
+}
+
+createStars();
+
+// Heart burst when tapping or clicking
+document.addEventListener("click", (event) => {
+    if (event.target.closest(".open-btn")) return;
+
+    const burst = document.createElement("div");
+    burst.className = "click-burst";
+    burst.textContent = "💖";
+    burst.style.left = event.clientX + "px";
+    burst.style.top = event.clientY + "px";
+
+    document.body.appendChild(burst);
+
+    setTimeout(() => burst.remove(), 900);
+});
+</script>
+
 </body>
 </html>
